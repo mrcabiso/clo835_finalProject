@@ -8,6 +8,6 @@ RUN pip install -r requirements.txt
 
 ADD . /opt/webapp-mysql
 
-EXPOSE 8080
+EXPOSE 81
 
 CMD python /opt/webapp-mysql/app.py
