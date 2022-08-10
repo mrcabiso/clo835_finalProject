@@ -6,10 +6,10 @@ import os
 
 app = Flask(__name__)
 
-DB_Host = os.environ.get('DB_Host') or "mysqldb"
-DB_Database = os.environ.get('DB_Database') or "mysql"
-DB_User = os.environ.get('DB_User') or "root"
-DB_Password = os.environ.get('DB_Password') or "p@ssw0rd1"
+DB_Host = os.environ.get('DB_Host') or "mysql"
+DB_Database = os.environ.get('DB_Database') or "mysqldb"
+DB_User = os.environ.get('DB_User')
+DB_Password = os.environ.get('DB_Password')
 
 @app.route("/")
 def main():
