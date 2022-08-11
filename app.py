@@ -9,8 +9,11 @@ app = Flask(__name__)
 DB_Host = os.environ.get('DB_Host') or "mysql"
 DB_Database = os.environ.get('DB_Database') or "mysql"
 DB_User = os.environ.get('DB_User') or "root"
-DB_Password = os.environ.get('DB_Password') or "paswrd"
-Group_Name = os.environ.get('Group_Name') or "CLO835-Group-8"
+DB_Password = os.environ.get('DB_Password') 
+clo835Group = os.environ.get('clo835Group') 
+appurl1 = os.environ.get('appurl1') 
+appurl2 = os.environ.get('appurl2') 
+
 
 @app.route("/")
 def main():
@@ -24,7 +27,7 @@ def main():
         color = '#ff3f3f'
         err_message = str(e)
 
-    return render_template('hello.html', debug="Environment Variables: DB_Host=" + (os.environ.get('DB_Host') or "Not Set") + "; DB_Database=" + (os.environ.get('DB_Database')  or "Not Set") + "; DB_User=" + (os.environ.get('DB_User')  or "Not Set") + "; DB_Password=" + (os.environ.get('DB_Password')  or "Not Set") + "; " + err_message, db_connect_result=db_connect_result, name=socket.gethostname(), color=color, Group_Name=Group_Name)
+    return render_template('hello.html', debug="Environment Variables: DB_Host=" + (os.environ.get('DB_Host') or "Not Set") + "; DB_Database=" + (os.environ.get('DB_Database')  or "Not Set") + "; DB_User=" + (os.environ.get('DB_User')  or "Not Set") + "; DB_Password=" + (os.environ.get('DB_Password')  or "Not Set") + "; " + err_message, db_connect_result=db_connect_result, name=socket.gethostname(), color=color, clo835Group=clo835Group, appurl1=appurl1, appurl2=appurl2)
 
 @app.route("/debug")
 def debug():
