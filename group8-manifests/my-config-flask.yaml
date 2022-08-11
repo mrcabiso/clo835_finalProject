@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-config
+data:
+    url1: "https://clo835-bucket.s3.amazonaws.com/success.jpg"
+    url2: "https://clo835-bucket.s3.amazonaws.com/failed.png"
+    Group: group8
