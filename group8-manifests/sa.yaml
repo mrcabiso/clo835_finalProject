@@ -4,4 +4,4 @@ metadata:
   name: clo835
   namespace: final
   annotations:
-    eks.amazonaws.com/policy-arn: arn:aws:iam::908795838523:policy/custom-policy-s3-read-list-objects
+    eks.amazonaws.com/role-arn: arn:aws:iam::908795838523:role/eksctl-clo835-addon-iamserviceaccount-final-Role1-YN97AYNYSZ0C
