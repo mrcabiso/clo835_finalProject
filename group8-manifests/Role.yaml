@@ -4,5 +4,5 @@ metadata:
   name: CLO835
 rules:
 - apiGroups: [""]
-  verbs: ["list", "create"]
+  verbs: ["get", "list", "create"]
   resources: ["namespaces"]
