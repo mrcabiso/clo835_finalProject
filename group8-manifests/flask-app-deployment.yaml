@@ -19,7 +19,7 @@ spec:
       serviceAccountName: clo835
       containers:
       - name: flaskapp
-        image: 431969002203.dkr.ecr.us-east-1.amazonaws.com/group8-repo:v0.2 #update with the group ecr repo
+        image: 295023233971.dkr.ecr.us-east-1.amazonaws.com/clo835_finalproject:v1.3 #update with the group ecr repo
         ports:
         - containerPort: 81
         resources:
