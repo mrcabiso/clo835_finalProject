@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    name: flask-app
+  annotations:
+    flux.weave.works/automated: "true"
+spec:
+  selector:
+    matchLabels:
+      name: flask-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: flask-app
+    spec:
+      serviceAccountName: clo835
+      containers:
+      - name: flaskapp
+        image: 431969002203.dkr.ecr.us-east-1.amazonaws.com/group8-repo:v0.2 #update with the group ecr repo
+        ports:
+        - containerPort: 81
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
+        env:
+        - name: clo835Group
+          valueFrom: 
+            configMapKeyRef:
+              name: my-config
+              key: Group
+        - name: appurl1
+          valueFrom: 
+            configMapKeyRef:
+              name: my-config
+              key: url1
+        - name: appurl2
+          valueFrom: 
+            configMapKeyRef:
+              name: my-config
+              key: url2
+        volumeMounts:
+        - name: app-secret-volumes
+          mountPath: "/opt/app-secret-volumes"
+          readOnly: true
+        envFrom:
+         - secretRef:
+            name: app-secret
+      volumes:
+       - name: app-secret-volumes
+         secret:
+          secretName: app-secret
