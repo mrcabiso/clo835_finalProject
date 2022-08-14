@@ -4,6 +4,8 @@ metadata:
   name: frontend
   labels:
     name: flask-app
+  annotations:
+    flux.weave.works/automated: "true"
 spec:
   selector:
     matchLabels:

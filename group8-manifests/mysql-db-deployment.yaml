@@ -4,6 +4,8 @@ metadata:
   name: mysql
   labels:
     name: mysql
+  annotations:
+    flux.weave.works/automated: "true"
 spec:
   selector:
     matchLabels:
