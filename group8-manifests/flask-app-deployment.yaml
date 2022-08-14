@@ -19,7 +19,7 @@ spec:
       serviceAccountName: clo835
       containers:
       - name: flaskapp
-        image: 908795838523.dkr.ecr.us-east-1.amazonaws.com/kesposo-finalproject:simple-webapp-mysql_v1.2 #update with the group ecr repo
+        image: 431969002203.dkr.ecr.us-east-1.amazonaws.com/group8-repo:v0.2 #update with the group ecr repo
         ports:
         - containerPort: 81
         resources:
